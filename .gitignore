@@ -1,0 +1,5 @@
+__pycache__
+.vscode/
+atlas-webapp/instance/*.db
+*.pyc
+atlas-webapp/static/js/d3*

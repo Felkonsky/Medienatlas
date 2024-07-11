@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <title>{% block title %}{% endblock %} - Digitaler Medienatlas</title>
+  <meta charset="UTF-8">
+  <meta name="author" content="Felix A. Goebel">
+  <meta name="description" content="Medienatlas der Stattlichen Kunstsammlungen Dresden">
+  <meta name="keywords" content="Medienstation, SKD, Medieninhalte, Ausstellungen, Digital">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <script src="{{ url_for('static', filename='js/nav.js') }}"></script>
+</head>
+<body>
+  <header class="catalog-header" id="header">
+    <nav class="navbar">
+      <span class="skd-brand">
+        <span class="skd-logo-dot"></span>
+        <span class="skd-logo-text">
+          <span class="skd-logo-text-name">
+            Staatliche<br>
+            Kunstsammlungen
+          </span>
+          <span class="skd-logo-text-location">Dresden</span>
+        </span>
+      </span>  
+      <ul>
+        <li class="float-l first-item"><p>{% block header %}{% endblock %}</p></li>
+        <li class=""><a class="clickme" href="#" data-content="filter">Filter</a></li>
+        <li class=""><a class="clickme" href="#" data-content="ansicht">Ansicht</a></li>
+        <li class=""><a class="clickme" href="#" data-content="hilfe">Hilfe</a></li>
+        <li class="float-r"><a class="clickme" href="#" data-content="suche">Suche</a></li>
+      </ul>
+    </nav>
+    <div id ="extended-header" class="extended-header"><div id="extended-header-content" class="extended-header-content"></div></div>
+  </header>
+  <main class="main-content">
+    {% block content %}{% endblock %}
+  </main>
+  <a class="btn-to-top"></a>
+  <footer class="skd-footer row">
+    <div class="col">
+      <p>Kontakt</p>
+      <ul>
+        <li><a class="footer-link" href="mailto:felix.goebel1@mailbox.tu-dresden.de">Felix A. Goebel</a></li>
+      </ul>
+    </div>
+    <div class="col">
+      <p>Barrierefreiheit</p>
+      <ul>
+        <li><a class="footer-link" href="#">Hilfe</a></li>
+        <li><a class="footer-link" href="#">Sprache</a></li>
+      </ul>
+    </div>
+    <div class="col">
+      <p>Rechtliches</p>
+      <ul>
+        <li><a class="footer-link" href="#">Impressum</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
