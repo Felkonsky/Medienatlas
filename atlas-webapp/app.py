@@ -2,11 +2,17 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 
-db = SQLAlchemy()
+UPLOAD_FOLDER = '../data/'
+
+
+db:SQLAlchemy= SQLAlchemy()
 
 def create_app():
-    app = app = Flask(__name__, template_folder="templates")
+    app = Flask(__name__, template_folder="templates")
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///medienatlas.db'
+    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+    app.config['DATA_UPLOAD'] = UPLOAD_FOLDER
+    
     db.init_app(app)
     
     # imports

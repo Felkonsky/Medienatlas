@@ -34,6 +34,7 @@ class Exhibition(db.Model):
     start_date = db.Column(db.Text)
     end_date = db.Column(db.Text)
     location = db.Column(db.Text)
+    trailer = db.Column(db.Text)
 
     mediastations = db.relationship('MediaStation', backref='exhibition', lazy=True)
     

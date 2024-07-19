@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Medienstation hinzufügen
+{% endblock %}
+
+{% block content %}
+<form action="" method="post">
+    <fieldset>
+        <legend>Allgemeine Informationen zur Medienstation</legend>
+        <label for="mtitle">Name: </label>
+        <input type="text" id="mtitle" name="mtitle" placeholder="Name der Medienstation" required>
+        <label for="mimage">Titelbild: </label>
+        <input type="file" id="mimage" name="mimage" required>
+        <label for="msource">Pfadangabe: </label>
+        <input type="file" id="msource" name="msource" required>
+        <label for="mdescription">Beschreibung: </label>
+        <textarea id="mdescription" name="mdescription" rows="4" cols="50" placeholder="optional" maxlength="2500"></textarea>
+    </fieldset>
+    <fieldset>
+        <legend>Angaben zur Ausstellung</legend>
+        <label for="extitle">Name: </label>
+        <input type="text" id="extitle" name="extitle" placeholder="Name der Ausstellung">
+        <label for="exlocation">Ausstellungsort: </label>
+        <input type="text" id="exlocation" name="exlocation" placeholder="Ausstellungsort">
+        <label for="exsdate">Zeitraum: von</label>
+        <input type="date" id="exsdate" name="exsdate">
+        <label for="exedate">bis</label>
+        <input type="date" id="exedate" name="exedate">
+        <label for="extrailer">Beschreibung: </label>
+        <textarea id="extrailer" name="extrailer" rows="4" cols="50" placeholder="Veranstaltungstext hier einfügen" maxlength="2500"></textarea>
+    </fieldset>
+    <fieldset>
+        <legend>Medienarten</legend>
+        <input type="checkbox" id="caudio" name="caudio" />
+        <label for="caudio">Audio</label>
+        
+        <input type="checkbox" id="cimage" name="cimage" />
+        <label for="cimage">Bild</label>
+
+        <input type="checkbox" id="ctext" name="ctext" />
+        <label for="ctext">Text</label>
+        
+        <input type="checkbox" id="video" name="video" />
+        <label for="audio">Video</label>
+
+        <input type="checkbox" id="cobject" name="cobject" />
+        <label for="cobject">3D Objekt</label>
+    </fieldset>
+
+    <fieldset>
+        <legend>Interaktionen</legend>
+        <input type="checkbox" id="itouch" name="itouch" />
+        <label for="itouch">Berühren</label>
+
+        <input type="checkbox" id="imove" name="imove" />
+        <label for="imove">Bewegen</label>
+
+        <input type="checkbox" id="ifocus" name="ifocus" />
+        <label for="ifocus">Fokussieren</label>
+
+        <input type="checkbox" id="icompare" name="icompare" />
+        <label for="icompare">Vergleichen</label>
+
+        <input type="checkbox" id="iconnect" name="iconnect" />
+        <label for="iconnect">Verknüpfen</label>
+
+        <input type="checkbox" id="izoom" name="izoom" />
+        <label for="izoom">Vergrößern</label>
+
+        <input type="checkbox" id="ipointclick" name="ipointclick" />
+        <label for="ipointclick">Zeigen und Klicken</label>
+    </fieldset>
+
+    <fieldset>
+        <legend>Visualisierung</legend>
+        <input type="checkbox" id="vbook" name="vbook" />
+        <label for="vbook">Buch</label>
+
+        <input type="checkbox" id="vslide" name="vslide" />
+        <label for="vslide">Diashow</label>
+
+        <input type="checkbox" id="vglyph" name="vglyph" />
+        <label for="vglyph">Glyphen</label>
+
+        <input type="checkbox" id="vtiles" name="vtiles" />
+        <label for="vtiles">Kacheln</label>
+
+        <input type="checkbox" id="vmap" name="vmap" />
+        <label for="vmap">Karte</label>
+
+        <input type="checkbox" id="vtimeline" name="vtimeline" />
+        <label for="vtimeline">Zeitstrahl</label>
+
+    </fieldset>
+        <button type="submit">Zum Atlas hinzufügen</button>
+</form>
+{% endblock %}
+

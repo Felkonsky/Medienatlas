@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <title>{% block title %}{% endblock %} - Digitaler Medienatlas</title>
+  <title>Medienatlas - {% block title %}{% endblock %}</title>
   <meta charset="UTF-8">
   <meta name="author" content="Felix A. Goebel">
   <meta name="description" content="Medienatlas der Stattlichen Kunstsammlungen Dresden">
@@ -9,6 +9,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
   <script src="{{ url_for('static', filename='js/nav.js') }}"></script>
+  <script>
+    window.static_tab_add = "{{ url_for('add') }}";
+    window.static_tab_edit_ex = "{{ url_for('get_exhibitions') }}";
+  </script>
 </head>
 <body>
   <header class="catalog-header" id="header">
@@ -24,9 +28,10 @@
         </span>
       </span>  
       <ul>
-        <li class="float-l first-item"><p>{% block header %}{% endblock %}</p></li>
+        <li class="float-l first-item brand"><p><a href="{{ url_for('index')}}" class="nostyle">Medienatlas</a></p></li>
+        <li class=""><a class="clickme" href="#" data-content="bearbeiten">Bearbeiten</a></li>
+        <li class=""><a class="clickme" href="#" data-content="ansicht">Darstellung</a></li>
         <li class=""><a class="clickme" href="#" data-content="filter">Filter</a></li>
-        <li class=""><a class="clickme" href="#" data-content="ansicht">Ansicht</a></li>
         <li class=""><a class="clickme" href="#" data-content="hilfe">Hilfe</a></li>
         <li class="float-r"><a class="clickme" href="#" data-content="suche">Suche</a></li>
       </ul>

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Alle Medienstationen
+{% endblock %}
+
+{% block content %}
+<table id="exhibitions">
+    <tr>
+        <th>Ausstellung</th>
+        <th>Ausstellungsort</th>
+        <th>Ausstellungszeitraum</th>
+    </tr>
+{% if exhibitions %}
+{% for ex in exhibitions %}
+<tr class="hover-me"><td>{{ ex.title }}</td><td>{{ ex.location }}</td><td>{{ ex.start_date[8:10] }}.{{ ex.start_date[5:7] }}.{{ ex.start_date[:4] }} bis {{ ex.end_date[8:10] }}.{{ ex.end_date[5:7] }}.{{ ex.end_date[:4] }}</td></tr>
+{% endfor %}
+{% endif %}
+</table>
+{% endblock %}

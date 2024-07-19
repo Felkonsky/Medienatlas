@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>SKD Presenter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="dist/css/swiper.css">
+  <link rel="stylesheet" href="fonts/stylesheet.css" />
+  <!-- Demo styles -->
+  <style>
+    html, body {
+      position: relative;
+      height: 100%;
+    }
+    body {
+      background: rgba(156,208,229,1);
+      font-family: 'roboto_condensedregular', serif;
+      font-size: 30px;
+	  font-weight: 100;
+      color:#fff;
+      margin: 0;
+      padding: 0;
+    }
+    .swiper-container {
+      width: 100%;
+      height: 100%;
+      margin-left: auto;
+      margin-right: auto;
+	  position: absolute;
+    }
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: rgba(156,208,229,0);
+
+      /* Center slide text vertically */
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+    }
+	
+	.overlayContainer{
+		position: absolute;
+		z-index:100;	
+	}
+			
+	.textOverlayContainer{
+		position: absolute;
+		background: rgba(200,200,200,0.85);
+		font-size: 200%;
+		margin: 2%;	
+		padding: 5px;	
+	}	
+			
+	.logoImg{
+		width: 40%;
+		margin: 5%;
+	}		
+	
+	
+	.imgType{
+	
+		/* History */
+		/* height: 1000px; */
+
+		/* Edit - Felix A. Goebel */
+		max-width: 100%;
+		max-height: 100vh;
+		margin: auto;
+	}
+	
+	.buttonLanguage{
+		 margin: 10px;
+	}
+	
+	#frame{
+		position: absolute;
+		top:10px;
+		width:100%;
+		height:10px;
+		border-top-color: rgba(210,11,17,1);
+		border-top-style: dotted;
+		border-top-width: 8px;
+	}
+
+  </style>
+</head>
+<body>
+  <!-- Swiper -->
+  <div id="frame"></div>
+  
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+	  <div class="swiper-slide"><img id="" src="img/folien_Meisterzeichnungen1.jpg"  class="imgType visible"></div>
+	  <div class="swiper-slide"><img id="" src="img/folien_Meisterzeichnungen2.jpg"  class="imgType visible"></div>
+	  <div class="swiper-slide"><img id="" src="img/folien_Meisterzeichnungen3.jpg"  class="imgType visible"></div>
+	  <div class="swiper-slide"><img id="" src="img/folien_Meisterzeichnungen4.jpg"  class="imgType visible"></div>
+	  <div class="swiper-slide"><img id="" src="img/folien_Meisterzeichnungen5.jpg"  class="imgType visible"></div>
+	  <div class="swiper-slide"><img id="" src="img/folien_Meisterzeichnungen6.jpg"  class="imgType visible"></div>
+	  <div class="swiper-slide"><img id="" src="img/folien_Meisterzeichnungen7.jpg"  class="imgType visible"></div>
+	  <div class="swiper-slide"><img id="" src="img/folien_Meisterzeichnungen8.jpg"  class="imgType visible"></div>
+	  <div class="swiper-slide"><img id="" src="img/folien_Meisterzeichnungen9.jpg"  class="imgType visible"></div>
+	  <div class="swiper-slide"><img id="" src="img/folien_Meisterzeichnungen10.jpg"  class="imgType visible"></div>
+	  <div class="swiper-slide"><img id="" src="img/folien_Meisterzeichnungen11.jpg"  class="imgType visible"></div>
+	  <div class="swiper-slide"><img id="" src="img/folien_Meisterzeichnungen12.jpg"  class="imgType visible"></div>
+	  <div class="swiper-slide"><img id="" src="img/folien_Meisterzeichnungen13.jpg"  class="imgType visible"></div>
+	  <div class="swiper-slide"><img id="" src="img/folien_Meisterzeichnungen14.jpg"  class="imgType visible"></div>
+	  <div class="swiper-slide"><img id="" src="img/folien_Meisterzeichnungen15.jpg"  class="imgType visible"></div>
+    </div>
+	<!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+    <!-- Add Arrows -->
+    <div class="swiper-button-next swiper-button-white"></div>
+    <div class="swiper-button-prev swiper-button-white"></div>
+  </div> 
+  
+  <!-- Comment - Felix A. Goebel: Does not work (no english content)  and therefore commented
+	<div class="overlayContainer">
+		<div id="" class=" buttonLanguage nonVisible">Wechseln zur deutschen Version </div>
+		<div id="" class=" buttonLanguage visible">Switch to English version</div>
+		<img id="" src="img/skd_logo_schwarz.svg"  class="logoImg">	
+	</div> -->
+
+  <!-- Swiper JS -->
+  <script src="dist/js/swiper.js"></script>
+  <script src="dist/js/jquery.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      loop: true,
+	  pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+	
+/*	
+$(document).on('touchstart', function() {
+	$(".textOverlayContainer").hide();
+  
+});
+$(document).on('touchend', function() {
+   $(".textOverlayContainer").delay(1000).fadeIn(100);
+});*/
+
+
+$(".buttonLanguage").on('click', function() {
+	
+ $(".imgType").toggleClass("nonVisible");
+ $(".imgType").toggleClass("visible");
+ 
+ $(".buttonLanguage").toggleClass("nonVisible");
+ $(".buttonLanguage").toggleClass("visible");
+ 
+
+	$(".nonVisible").fadeOut(1000, function(){
+  
+	$(".visible").fadeIn(1000, function(){
+
+		});
+	});
+});
+
+
+$( document ).ready(function() {
+	/*
+		var text = "";
+		
+			for (i = 1; i <41; i++) {
+				text += '<div class="swiper-slide"><img id="" src="img/folien_IRDM'+i+'.jpg"  class="imgType"></div>';
+			}
+		
+	*/	
+	//console.log(text);
+		
+	
+	$(".nonVisible").hide();
+		
+	
+	});
+
+		///screensaver///
+		var mousetimeout;
+		var screensaver_active = true;
+		var idletime = 50;
+
+		function show_screensaver(){
+			
+			screensaver_active = true;
+			screensaver_animation();
+		}
+
+		function stop_screensaver(){
+			
+			screensaver_active = false;
+			console.log("stopSave!");
+		}
+
+		////////////////
+		$(document).ready(function(){
+			
+			mousetimeout = setTimeout(function(){
+				show_screensaver();
+			}, 1000 * idletime); // 5 secs			
+		});
+		
+		///////////////////
+
+		$(document).mousemove(function(){
+			clearTimeout(mousetimeout);
+			
+			if (screensaver_active) {
+				stop_screensaver();
+			}
+
+			mousetimeout = setTimeout(function(){
+				show_screensaver();
+			}, 1000 * idletime); // 5 secs			
+		});
+
+		function screensaver_animation(){
+				if (screensaver_active) {
+				
+					swiper.slideTo( 1,1000,false );	
+					console.log("screenSave!");
+			}
+		}	
+  </script>
+</body>
+</html>

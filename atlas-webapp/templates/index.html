@@ -4,28 +4,12 @@
 Startseite
 {% endblock %}
 
-{% block header %}
-Medienatlas
-{% endblock %}
-
 {% block content %}
-
-Test Hallo CONTENT
-Consequat cupidatat non consequat laborum laborum cillum labore ad ut enim quis proident pariatur ad ex do proident aute. In consectetur sint ex fugiat lorem pariatur in in consequat aliquip nulla dolor officia incididunt esse. Nostrud commodo sed qui in non anim elit elit cupidatat amet. Do ex nulla minim sunt id mollit nostrud culpa dolore pariatur qui velit quis excepteur nostrud excepteur.
-
-Labore occaecat aliquip mollit consectetur quis qui sed commodo excepteur nisi consectetur velit magna sit minim. In aliquip sint tempor aliquip elit excepteur nisi laborum laboris occaecat id tempor aute aute ullamco eiusmod do consequat. Anim magna aliquip sunt do veniam exercitation sint est id ad in aute nostrud mollit et aliquip.
-
-Exercitation ipsum ad mollit anim adipiscing aute cupidatat adipiscing voluptate velit. Et elit anim reprehenderit minim officia ipsum anim dolor eu eiusmod sit occaecat sint nisi dolor aliqua dolor commodo. Ut ad duis esse aliquip dolor esse consequat reprehenderit magna mollit elit adipiscing nisi.
-
-Aliquip incididunt nostrud lorem ad laborum aute ut laboris reprehenderit. Ea adipiscing non adipiscing pariatur eu irure ad fugiat exercitation non qui aute. Nulla minim irure voluptate ut ex consequat nisi esse sed occaecat enim et exercitation proident do ex aliquip. Ex lorem enim ea amet cupidatat consectetur lorem esse aute et exercitation culpa laboris sunt. Consectetur tempor anim enim excepteur nulla minim nulla dolor ea nulla deserunt tempor in eiusmod eu culpa id velit sit. Eu quis pariatur quis consectetur duis ea aute amet laboris do magna ipsum et.
-
-Irure sed ea labore do dolor ut sint cillum ut est commodo nulla laborum consequat magna. Culpa mollit occaecat commodo enim esse nisi quis ad ex ea reprehenderit sed ut occaecat do fugiat magna veniam. In ad sit adipiscing ut ex aliquip sit tempor consectetur. Velit est pariatur anim esse esse et fugiat officia incididunt eiusmod duis laboris proident mollit anim. Enim in sint consequat exercitation mollit reprehenderit ullamco et do irure reprehenderit reprehenderit est tempor officia exercitation. Id reprehenderit do sit laborum esse eu officia duis reprehenderit ipsum irure nisi tempor sint tempor sint pariatur ullamco enim.
-
-Cillum adipiscing nisi fugiat lorem eu consequat ex sunt esse occaecat non reprehenderit voluptate ut fugiat irure. Sint elit eu dolor culpa incididunt minim fugiat non irure duis excepteur occaecat ad. Est amet irure esse elit minim consectetur cillum tempor ad reprehenderit aute dolore occaecat et velit. Est lorem ut sunt qui enim proident laboris eiusmod ad amet elit quis elit officia esse aliquip anim laboris ea.
-
-Fugiat ex nisi cupidatat eiusmod id dolor irure fugiat pariatur ea voluptate nostrud deserunt id qui reprehenderit culpa aliquip dolore. Ipsum non consequat incididunt sit nostrud ut irure labore minim qui sunt. Sint cupidatat deserunt consectetur voluptate tempor eiusmod mollit laborum id in. Aliquip exercitation nisi sint ipsum laboris excepteur cupidatat duis minim quis culpa cillum consectetur ex incididunt ullamco.
-
-Ea sit voluptate non amet aliqua anim sed consequat ex enim nostrud labore sunt cillum enim exercitation. Veniam elit sed ullamco ad excepteur ipsum dolor aute laboris sed voluptate dolor magna sed cupidatat et nisi. Incididunt in incididunt consequat eu ipsum exercitation ullamco velit enim. Eiusmod voluptate magna anim amet enim enim ex anim proident do. Nulla sunt minim cillum laboris adipiscing voluptate ut duis commodo anim. Nisi dolor pariatur est minim tempor ad tempor ea ea minim culpa nisi magna nisi aliqua veniam elit quis.
-Adipiscing officia pariatur incididunt minim ipsum irure qui duis esse eu culpa incididunt amet sit laborum. Magna velit aute consequat irure consequat laboris ut deserunt duis ea officia dolor sit cupidatat commodo. Et sint dolore laboris anim veniam veniam ad nostrud anim pariatur. Et magna dolor nostrud proident excepteur in ullamco consequat quis lorem laboris commodo elit anim.
-Consectetur deserunt reprehenderit magna sunt et cillum veniam sit velit proident culpa aute. Sed non voluptate officia nisi consequat eiusmod minim sit sunt qui et aliqua cupidatat sit. Sed esse sunt velit minim amet quis tempor cupidatat elit ad ut magna nisi nisi ea. Deserunt pariatur anim adipiscing voluptate anim exercitation culpa sint proident ipsum pariatur nisi veniam qui dolore lorem sint laborum adipiscing. Ipsum proident deserunt non sed labore laboris in pariatur irure magna incididunt. Laboris qui qui in pariatur eu ex laboris aliqua aute in et pariatur duis non cupidatat dolore aliquip dolor.
+<div class="grid">
+{% if mediastations %}
+{% for element in mediastations %}
+        <div class="grid-item"><img class="grid-item-img" src="{{ element.image_url }}" alt="{{element.title}}"></div>
+{% endfor %}
+{% endif %}
+</div>
 {% endblock %}

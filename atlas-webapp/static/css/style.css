@@ -22,6 +22,32 @@ body {
    ----- SKD HEADER ----- 
    ----------------------
 */
+
+.tab-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.col-row-layout li {
+  margin: 0;
+  padding: 0 0 5px 0;
+  text-decoration: none;
+  outline: none;
+  color: inherit;
+}
+
+.brand {
+  margin-top: -5px;
+}
+.nostyle{
+  text-decoration: none;
+  outline: none;
+  color: inherit;
+}
+/* .nostyle:focus{
+  text-decoration: none;
+} */
+
 .catalog-header {
   position: fixed;
   top: -100px;
@@ -85,7 +111,8 @@ body {
   position: relative;
   display: inline-block;
   padding: 0 10px;
-  top: 3px;
+  top: 10px;
+  height: 26px;
 }
 
 ul p {
@@ -109,14 +136,16 @@ ul p {
 .navbar > ul > li > a{
   color: #000;
   text-decoration: none;
-  font-size: 1.2rem;
+  /* font-size: 1.2rem; */
+  font-weight: 200;
   padding: 5px 0px;
   border-bottom: 0px solid #000;
   transition: border-width 50ms ease-in;
+  vertical-align: bottom;
 }
 .navbar > ul > li > a:hover {
   color: #000;
-  border-width: 3px;
+  border-width: 2px;
 }
 
 .float-r {
@@ -184,14 +213,11 @@ ul p {
 
   -webkit-user-select: none;
 }
-
-
 /* 
    ------------------------
    ----- MAIN CONTENT ----- 
    ------------------------
 */
-
 body > .main-content {
   overflow: scroll;
   margin-top: 150px;
@@ -203,6 +229,26 @@ body > .main-content {
   z-index: 1;
 }
 
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Dynamic columns */
+  gap: 10px; /* Space between grid items */
+}
+
+.grid-item {
+  background-color: #f1f1f1;
+  border: 1px solid #ccc;
+  padding: 20px;
+  text-align: center;
+}
+
+.grid-item-img {
+  width: auto;
+  height: auto;
+}
+
+
+
 /* 
    ----------------------
    ----- G - SEARCH ----- 
@@ -212,7 +258,7 @@ body > .main-content {
 
 .gsearch {
   width: 100%;
-  font-size: 19px;
+  font-size: inherit;
   padding: 10px 30px 10px 10px;
   border-width: 1px;
   border-style: solid; 
@@ -252,8 +298,8 @@ body > .main-content {
   display: flex;
   border-color: transparent;
   align-items: center;
-  padding-left: 13px;
-  padding-right: 13px;
+  padding-left: 5px;
+  padding-right: 5px;
   background-color: #fff;
   cursor: pointer;
 
@@ -277,12 +323,24 @@ body > .main-content {
 */
 
 .ext-content-heading-red{
+  font-weight: 200;
+  color: #555;
   border-bottom: 2px solid #EB532B;
 }
+
+.ext-content-heading {
+  font-weight: 200;
+  color: #555;
+}
+
 .ext-content-heading-green{
+  font-weight: 200;
+  color: #555;
   border-bottom: 2px solid #1E8E45;
 }
 .ext-content-heading-blue{
+  font-weight: 200;
+  color: #555;
   border-bottom: 2px solid #2290BD;
 }
 
@@ -369,5 +427,41 @@ footer {
   opacity: 1;
 }
 .active-link {
-  border-bottom: #000 3px solid !important;
+  border-bottom: #000 2px solid !important;
+}
+
+.jcl {
+  justify-content: left !important;
+}
+
+#exhibitions {
+  border-collapse: collapse;
+  width: 100% !important;
+}
+
+#exhibitions td, #exhibitions th {
+  font-weight: 200;
+  border: 1px solid #eee;
+  padding: 8px;
+}
+
+#exhibitions th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  font-weight: normal;
+  background-color: #f7f7f7;
+}
+#exhibitions tr {
+  -webkit-transition: background-color 150ms ease-out;
+  -moz-transition: background-color 150ms ease-out;
+  -o-transition: background-color 150ms ease-out;
+  transition: background-color 150ms ease-out;
+}
+
+/* #exhibitions tr:nth-child(odd){background-color: #f7f7f7;} */
+
+#exhibitions .hover-me:hover {
+  background-color: #E5E5E5;
+  font-weight: normal !important;
 }

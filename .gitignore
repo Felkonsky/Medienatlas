@@ -3,3 +3,6 @@ __pycache__
 atlas-webapp/instance/*.db
 *.pyc
 atlas-webapp/static/js/d3*
+.DS_Store
+migrations/
+instance/
