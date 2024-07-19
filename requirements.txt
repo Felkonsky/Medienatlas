@@ -3,6 +3,7 @@ blinker @ file:///home/conda/feedstock_root/build_artifacts/blinker_171509118412
 click @ file:///home/conda/feedstock_root/build_artifacts/click_1692311806742/work
 Flask @ file:///home/conda/feedstock_root/build_artifacts/flask_1712667726126/work
 Flask-Migrate @ file:///home/conda/feedstock_root/build_artifacts/flask-migrate_1710203994795/work
+Flask-Reuploaded==1.4.0
 Flask-SQLAlchemy @ file:///home/conda/feedstock_root/build_artifacts/flask-sqlalchemy_1719325630281/work
 greenlet @ file:///Users/runner/miniforge3/conda-bld/greenlet_1703201714305/work
 importlib_metadata @ file:///home/conda/feedstock_root/build_artifacts/importlib-metadata_1719361860083/work

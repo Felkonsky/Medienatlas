@@ -5,17 +5,17 @@ Medienstation hinzufügen
 {% endblock %}
 
 {% block content %}
-<form action="" method="post">
+<form action="" method="post" enctype="multipart/form-data">
     <fieldset>
         <legend>Allgemeine Informationen zur Medienstation</legend>
-        <label for="mtitle">Name: </label>
-        <input type="text" id="mtitle" name="mtitle" placeholder="Name der Medienstation" required>
-        <label for="mimage">Titelbild: </label>
-        <input type="file" id="mimage" name="mimage" required>
+        <label for="mstitle">Name: </label>
+        <input type="text" id="mstitle" name="mstitle" placeholder="Name der Medienstation" required>
+        <label for="msimage">Titelbild: </label>
+        <input type="file" id="msimage" name="msimage" required>
         <label for="msource">Pfadangabe: </label>
-        <input type="file" id="msource" name="msource" required>
-        <label for="mdescription">Beschreibung: </label>
-        <textarea id="mdescription" name="mdescription" rows="4" cols="50" placeholder="optional" maxlength="2500"></textarea>
+        <input type="file" id="mssource" name="mssource" required>
+        <label for="msdescription">Beschreibung: </label>
+        <textarea id="msdescription" name="msdescription" rows="4" cols="50" placeholder="optional" maxlength="2500"></textarea>
     </fieldset>
     <fieldset>
         <legend>Angaben zur Ausstellung</legend>

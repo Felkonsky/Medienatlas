@@ -9,6 +9,4 @@ Chair of Media Design
 
 ## Setup
 
-Do not forget to add `d3.v7.min` to the `static/js` folder
-
 

@@ -6,3 +6,7 @@ atlas-webapp/static/js/d3*
 .DS_Store
 migrations/
 instance/
+atlas-webapp/config.py
+atlas-webapp/uploads/images/*
+atlas-webapp/uploads/data/*
+
