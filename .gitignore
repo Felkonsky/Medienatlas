@@ -1,11 +1,10 @@
 __pycache__
 .vscode/
-atlas-webapp/instance/*.db
 *.pyc
-atlas-webapp/static/js/d3*
 .DS_Store
-migrations/
-instance/
+atlas-webapp/static/js/d3*
+atlas-webapp/migrations
+atlas-webapp/instance
 atlas-webapp/config.py
 atlas-webapp/uploads/images/*
 atlas-webapp/uploads/data/*
