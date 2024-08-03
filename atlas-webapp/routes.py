@@ -2,17 +2,78 @@ import os
 from flask_wtf import FlaskForm
 # from forms import UploadForm
 from flask import request,render_template, flash, redirect, send_from_directory, url_for
-from models import MediaStation, Exhibition, MediaContent, MediaType, Interaction
+from models import MediaStation, Exhibition, MediaContent, MediaType, Interaction, Visualization
+# , mt_audio, mt_image, mt_object, mt_text, mt_video, it_compare, it_connect, it_point_and_click, it_focus, it_move, it_touch, it_zoom, viz_book, viz_glyph, viz_map, viz_slideshow, viz_tiles, viz_timeline
 from werkzeug.utils import secure_filename
 # from app import ms_data, ms_images
 
 def register_routes(app, db):
+    """Routing and db related stuff."""
+    ################
+    # Static Types #
+    ################
 
+    # Media types
+    mt_audio = MediaType(name="Audio")
+    mt_video = MediaType(name="Video")
+    mt_image = MediaType(name="Bilder")
+    mt_text = MediaType(name="Text")
+    mt_object = MediaType(name="3D Objekt")
+
+    # Interaction types
+    it_zoom = Interaction(name="Vergrößern")
+    it_compare = Interaction(name="Vergleichen")
+    it_point_and_click = Interaction(name="Zeigen und Klicken")
+    it_touch = Interaction(name="Berühren")
+    it_connect = Interaction(name="Verknüpfen")
+    it_move = Interaction(name="Bewegen")
+    it_focus = Interaction(name="Fokussieren")
+
+    # Interactive Visualization realization
+    viz_slideshow = Visualization(name="Diashow")
+    viz_glyph = Visualization(name="Glyphen")
+    viz_timeline = Visualization(name="Zeitstrahl")
+    viz_map = Visualization(name="Karte")
+    viz_book = Visualization(name="Buch")
+    viz_tiles = Visualization(name="Kacheln")
+    
+    
+    type_dict = {
+        "media": {
+            "audio": mt_audio,
+            "video": mt_video,
+            "image": mt_image,
+            "text": mt_text,
+            "object": mt_object
+        },
+        "interaction": {
+            "compare": it_compare,
+            "connect": it_connect,
+            "focus": it_focus,
+            "move": it_move,
+            "pointclick": it_point_and_click,
+            "touch": it_touch,
+            "zoom": it_zoom
+        },
+        "visualization": {
+            "book": viz_book,
+            "glyph": viz_glyph,
+            "map": viz_map,
+            "slideshow": viz_slideshow,
+            "tiles": viz_tiles,
+            "timeline": viz_timeline
+        }
+    }
+    
     @app.route("/index")
     @app.route("/")
     def index():
         mediastations = MediaStation.query.all()
-        return render_template("index.html", mediastations=mediastations)
+        mediatypes = MediaType.query.all()
+        interactions = Interaction.query.all()
+        visualizations = Visualization.query.all()
+        
+        return render_template("index.html", mediastations=mediastations, interactions=interactions, visualizations=visualizations)
     
     @app.route("/uploads/images/<img>")
     def get_image(img):
@@ -24,7 +85,7 @@ def register_routes(app, db):
     
     @app.route("/add-mediastation", methods=["GET", "POST"])
     def add():
-        """Add form input to the database."""
+        """Insert add-mediastation form input to into the database."""
         
         # form:FlaskForm = UploadForm()
         
@@ -75,18 +136,40 @@ def register_routes(app, db):
             db.session.add(new_ms)
             db.session.commit()
             
+            media_types = request.form.getlist("mt")
+            interaction_types = request.form.getlist("it")
+            visualization_types = request.form.getlist("viz")
+            
+            media_objects = []
+            interaction_objects = []
+            visualization_objects = []
+            
+            for mt in media_types:
+                media_objects.append(type_dict["media"][mt])
+            
+            for it in interaction_types:
+                interaction_objects.append(type_dict["interaction"][it])
+            
+            for viz in visualization_types:
+                visualization_objects.append(type_dict["visualization"][viz])
+                
+            media_content = MediaContent(mediastation_id=new_ms.id)
+            
+            media_content.media_types.extend(media_objects)
+            media_content.interactions.extend(interaction_objects)
+            media_content.visualizations.extend(visualization_objects)
+            
+            db.session.add(media_content)
+            db.session.commit()
+            
             return render_template("add-mediastation.html")
+        
         
     @app.route("/exhibitions")
     def get_exhibitions():
         exhibitions = Exhibition.query.all()
         
         return render_template("exhibitions.html", exhibitions=exhibitions)
-    
-    
-    
-    
-    
     
         """OLD."""
         

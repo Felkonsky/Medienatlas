@@ -15,7 +15,7 @@
   </script>
 </head>
 <body>
-  <header class="catalog-header" id="header">
+  <header class="catalog-header" id="base-header">
     <nav class="navbar">
       <span class="skd-brand">
         <span class="skd-logo-dot"></span>
@@ -28,39 +28,16 @@
         </span>
       </span>  
       <ul>
-        <li class="float-l first-item brand"><p><a href="{{ url_for('index')}}" class="nostyle">Medienatlas</a></p></li>
-        <li class=""><a class="clickme" href="#" data-content="bearbeiten">Bearbeiten</a></li>
-        <li class=""><a class="clickme" href="#" data-content="ansicht">Darstellung</a></li>
-        <li class=""><a class="clickme" href="#" data-content="filter">Filter</a></li>
-        <li class=""><a class="clickme" href="#" data-content="hilfe">Hilfe</a></li>
-        <li class="float-r"><a class="clickme" href="#" data-content="suche">Suche</a></li>
+        
       </ul>
     </nav>
-    <div id ="extended-header" class="extended-header"><div id="extended-header-content" class="extended-header-content"></div></div>
   </header>
   <main class="main-content">
-    {% block content %}{% endblock %}
+    <div id="filterview" class="">
+      {% block filter %}{% endblock %}
+    </div>
+    <div id="splitter"></div>
+    <div id="objectview" class="">{% block content %}{% endblock %}</div>
   </main>
   <a class="btn-to-top"></a>
-  <footer class="skd-footer row">
-    <div class="col">
-      <p>Kontakt</p>
-      <ul>
-        <li><a class="footer-link" href="mailto:felix.goebel1@mailbox.tu-dresden.de">Felix A. Goebel</a></li>
-      </ul>
-    </div>
-    <div class="col">
-      <p>Barrierefreiheit</p>
-      <ul>
-        <li><a class="footer-link" href="#">Hilfe</a></li>
-        <li><a class="footer-link" href="#">Sprache</a></li>
-      </ul>
-    </div>
-    <div class="col">
-      <p>Rechtliches</p>
-      <ul>
-        <li><a class="footer-link" href="#">Impressum</a></li>
-      </ul>
-    </div>
-  </footer>
 </body>

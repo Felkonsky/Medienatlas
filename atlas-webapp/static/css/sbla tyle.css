@@ -1,23 +1,17 @@
 body {
   margin: 0;
-  padding: 0 25px 15px 25px;
+  padding: 0;
   background-color: #fff;
   color: #000;
-  height: calc(100% - 15px);
+  height: 100%;
   width: 100%;
   font-family: "Baton Turbo Regular","Helvetica Neue", "Helvetica", "Arial" , "sans-serif";
   font-size: 0.9rem;
   line-height: 1.4;
   min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
+  display: block;
   scroll-behavior: smooth !important;
   caret-color: #000;
-  -webkit-user-select: none; /* Disable text selection */
-  -moz-user-select: none; /* Disable text selection */
-  -ms-user-select: none; /* Disable text selection */
-  user-select: none; /* Disable text selection */
 }
 
 .mt-15 {
@@ -28,6 +22,19 @@ body {
    ----- SKD HEADER ----- 
    ----------------------
 */
+
+.tab-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.col-row-layout li {
+  margin: 0;
+  padding: 0 0 5px 0;
+  text-decoration: none;
+  outline: none;
+  color: inherit;
+}
 
 .brand {
   margin-top: -5px;
@@ -45,10 +52,14 @@ body {
   position: fixed;
   top: -100px;
   left: 0;
-  width: 100%;
+  width: 90%;
   height: auto;
   background-color: #fff; /* fallback color*/
   background-color: rgba(255, 255, 255, 0.9);
+
+
+  border-bottom: 1px solid #eee;
+  padding: 0 5%;
   z-index: 1000;
 
   user-select: none;
@@ -61,6 +72,25 @@ body {
 
 .extended-header .extended-header-content .is-open{
   overflow: none;
+}
+
+.extended-header {
+  height: 0px;
+  transition: height 150ms ease-in;
+}
+
+.extended-header .extended-header-content {
+  overflow: hidden;
+}
+
+.extended-header-content {
+  /* margin-top: 10px; */
+  opacity: 0;
+  transition: opacity 250ms ease-in-out;
+}
+.extended-header-content p {
+  margin: 0 0 5px 0;
+  padding: 0 0 0 0;
 }
 
 .opaque {
@@ -106,6 +136,7 @@ ul p {
 .navbar > ul > li > a{
   color: #000;
   text-decoration: none;
+  /* font-size: 1.2rem; */
   font-weight: 200;
   padding: 5px 0px;
   border-bottom: 0px solid #000;
@@ -187,40 +218,15 @@ ul p {
    ----- MAIN CONTENT ----- 
    ------------------------
 */
-.main-content {
-  padding-top: 155px;
-  display: flex;
-  /* align-items: center; */
-  /* width: 100%; */
-  /* height: 100vh; */
-  /* box-sizing: border-box; */
-  /* padding: 20px; */
-  /* padding-top: 175px; */
-  /* flex-grow: 1; */
-  height: calc(100vh - 165px);
-}
-
-#splitter {
-  position: relative;
-  margin: 30px 0px;
-  width: 2px;
-  background-color: #D4D4D4FF;
-  cursor: col-resize;
-}
-
-#filterview, #objectview {
-  box-sizing: border-box;
-  padding: 30px;
-}
-
-#filterview {
-  width: calc(50% - 25px);
-  overflow-y: auto;
-}
-
-#objectview {
-  width: calc(50% - 30px);
-  overflow-y: scroll;
+body > .main-content {
+  overflow: scroll;
+  margin-top: 170px;
+  padding: 25px 5% 2.5% 5%;
+  height: 100%;
+  background-color: #fff;
+  text-align: justify;
+  scroll-behavior: smooth;
+  z-index: 1;
 }
 
 .grid {

@@ -4,11 +4,28 @@
 Startseite
 {% endblock %}
 
+<table>
+  <thead>
+    <tr>
+      <th>abgewählt</th>
+      <th>Filter</th>
+      <th>ausgewählt</th>     
+    </tr>
+  </thead>
+
+{% block filter %}
+
+{% for element in mediastations %}
+        <!-- <div class="grid-item"><a class="" href="#"><img class="grid-item-img" src="{{ url_for('get_image', img=element.image_url) }}" alt="{{element.title}}"></a></div> -->
+{% endfor %}
+{% endblock %}
+</table>
+
 {% block content %}
 <div class="grid">
 {% if mediastations %}
 {% for element in mediastations %}
-        <div class="grid-item"><img class="grid-item-img" src="{{ url_for('get_image', img=element.image_url) }}" alt="{{element.title}}"></div>
+        <div class="grid-item"><a class="" href="#"><img class="grid-item-img" src="{{ url_for('get_image', img=element.image_url) }}" alt="{{element.title}}"></a></div>
 {% endfor %}
 {% endif %}
 </div>
